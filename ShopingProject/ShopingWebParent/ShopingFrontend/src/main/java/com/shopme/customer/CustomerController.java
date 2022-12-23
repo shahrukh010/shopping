@@ -52,6 +52,21 @@ public class CustomerController {
 
 		return "register/register_success";
 	}
+	
+
+	@GetMapping("/account_details")
+	public String viewAccountDetails(Model model, HttpServletRequest request) {
+		String email = Utility.getEmailOfAuthenticatedCustomer(request);
+		Customer customer = customerService.getCustomerByEmail(email);
+		List<Country> listCountries = customerService.listAllCountries();
+		
+		model.addAttribute("customer", customer);
+		model.addAttribute("listCountries", listCountries);
+		
+		return "customer/account_form";
+	}
+	
+	
 
 	private void sendVerificationEmail(HttpServletRequest http, Customer customer)
 			throws UnsupportedEncodingException, MessagingException {
