@@ -13,3 +13,17 @@ It is in progress.....
 
 ![shoping-3](https://user-images.githubusercontent.com/93510831/209321662-2c65d395-2591-418e-86e6-a999a54a3e27.png)
 
+
+
+
+
+
+
+
+
+Shopping  website  it BackEnd module that allows admin  to upload products
+
+
+![shoping-1](https://user-images.githubusercontent.com/93510831/209322917-7956ab31-9407-4aab-ad72-046b6790a432.png)
+
+
