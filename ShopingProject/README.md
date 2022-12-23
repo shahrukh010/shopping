@@ -28,5 +28,8 @@ Shopping  website  it BackEnd module that allows admin  to upload products and p
 
 ![shoping-backend-1](https://user-images.githubusercontent.com/93510831/209323337-24624185-3634-4c4b-818a-a20296138822.png)
 
+![shoping-backend-2](https://user-images.githubusercontent.com/93510831/209323419-f2aac8e1-7e44-487e-a4ea-ced99babd0b5.png)
+
+
 
 
