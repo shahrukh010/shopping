@@ -6,4 +6,10 @@ The frontend module of the shopping project
 It is in progress.....
 
 ![Shopping-Frontend](https://user-images.githubusercontent.com/93510831/209320247-8ec8bd5d-f9cd-4342-9725-fb7a4c790ffb.png)
+
+
 ![shoping-2](https://user-images.githubusercontent.com/93510831/209321471-090ed107-24c9-4afd-a53c-d2facee05e2b.png)
+
+
+![shoping-3](https://user-images.githubusercontent.com/93510831/209321662-2c65d395-2591-418e-86e6-a999a54a3e27.png)
+
