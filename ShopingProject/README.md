@@ -1,6 +1,6 @@
 # Shopping E-comm
-
-This is my Personal project in this project i used these  technology Java,Springboot,mysql,javascript,boostrap(html/css)
+ 
+This is my Personal project in this project i used these  technology Java, Springboot, mysql, javascript, Bootstrap(html/css)
 ## Shopping  website that allows people to buy and sell digital products over the internet Through an e-commerce website, a business can process orders, accept payments, manage shipping and logistics, and provide customer service.
 
 
