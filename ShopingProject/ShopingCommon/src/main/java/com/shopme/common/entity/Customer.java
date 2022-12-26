@@ -59,8 +59,14 @@ public class Customer {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "authentication_type", length = 10)
 	private AuthenticationType authenticationType;
+	
+	
 
 	public Customer() {
+	}
+	
+	public Customer(Integer id) {
+		this.id = id;
 	}
 
 	public AuthenticationType getAuthenticationType() {

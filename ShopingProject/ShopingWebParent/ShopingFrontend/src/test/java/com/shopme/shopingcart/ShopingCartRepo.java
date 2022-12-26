@@ -1,5 +1,7 @@
 package com.shopme.shopingcart;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import org.junit.jupiter.api.Test;
@@ -23,19 +25,36 @@ public class ShopingCartRepo {
 	
 	@Autowired
 	private EntityManager entityManager;
-	
+
 	@Test
 	public void addProduct() {
 		
-		Customer customerId = entityManager.find(Customer.class, 1);
-		Product productId = entityManager.find(Product.class, 1);
+		Customer customerId = entityManager.find(Customer.class, 2);
+		Product productId = entityManager.find(Product.class, 130);
 		
 		CartItem cartItem = new CartItem();
 		
 		cartItem.setCustomer(customerId);
 		cartItem.setProduct(productId);
-		cartItem.setQuantity(3);
+		cartItem.setQuantity(2);
 		
-		cartRepo.save(cartItem);
+		CartItem cartItem2 = new CartItem();
+		cartItem2.setCustomer(customerId);
+		cartItem2.setProduct(productId);
+		cartItem2.setQuantity(1);
+		
+		
+		cartRepo.save(cartItem2);
+		
+	}
+	
+	@Test
+	public void findByCustomer(){
+		
+		Customer customerId = entityManager.find(Customer.class, 2);
+		
+		List<CartItem> cartItem = cartRepo.findByCustomer(customerId);
+		
+		cartItem.forEach(System.out::println);
 	}
 }

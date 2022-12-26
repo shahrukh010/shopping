@@ -59,6 +59,13 @@ public class Product {
 	private int reviewCount;
 	private float averageRating;
 
+	
+	public Product() {}
+
+	public Product(Integer i) {
+		this.id = id;
+	}
+
 	public int getReviewCount() {
 		return reviewCount;
 	}
@@ -75,11 +82,11 @@ public class Product {
 		this.averageRating = averageRating;
 	}
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "categories_id")
 	private Categories categories;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "brand_id")
 	private Brand brand;
 
@@ -288,5 +295,14 @@ public class Product {
 
 		this.details.add(new ProductDetail(name, value, this));
 	}
+	
+	@Override
+	public String toString() {
+		
+		return "product name:"+this.name+"product price"+this.getPrice();
+				
+	}
+	
+	
 
 }
