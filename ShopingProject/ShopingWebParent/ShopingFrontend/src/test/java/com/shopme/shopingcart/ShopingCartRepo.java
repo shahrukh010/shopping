@@ -22,39 +22,69 @@ public class ShopingCartRepo {
 
 	@Autowired
 	private ShopingCartRepository cartRepo;
-	
+
 	@Autowired
 	private EntityManager entityManager;
 
 	@Test
 	public void addProduct() {
-		
+
 		Customer customerId = entityManager.find(Customer.class, 2);
 		Product productId = entityManager.find(Product.class, 130);
-		
+
 		CartItem cartItem = new CartItem();
-		
+
 		cartItem.setCustomer(customerId);
 		cartItem.setProduct(productId);
 		cartItem.setQuantity(2);
-		
+
 		CartItem cartItem2 = new CartItem();
 		cartItem2.setCustomer(customerId);
 		cartItem2.setProduct(productId);
 		cartItem2.setQuantity(1);
-		
-		
+
 		cartRepo.save(cartItem2);
-		
+
 	}
-	
+
 	@Test
-	public void findByCustomer(){
-		
+	public void findByCustomer() {
+
 		Customer customerId = entityManager.find(Customer.class, 2);
-		
+
 		List<CartItem> cartItem = cartRepo.findByCustomer(customerId);
-		
+
 		cartItem.forEach(System.out::println);
 	}
+
+	@Test
+	public void findByCustomerAndProduct() {
+
+		Customer customerId = entityManager.find(Customer.class, 2);
+		Product productId = entityManager.find(Product.class, 130);
+
+		CartItem cartItem = this.cartRepo.findByCustomerAndProduct(customerId, productId);
+
+		System.err.println(cartItem);
+	}
+
+	@Test
+	public void updateQuantity() {
+
+		Integer quantity = 4;
+		Customer customerId = entityManager.find(Customer.class, 2);
+		Product productId = entityManager.find(Product.class, 130);
+
+		cartRepo.updateQuantity(quantity, customerId.getId(), productId.getId());
+	}
+
+	@Test
+	public void testDeleteCustomerAndProduct() {
+
+		Integer customerId = 2;
+		Integer productId = 130;
+
+		cartRepo.deleteByCustomerAndProduct(customerId, productId);
+	}
 }
+
